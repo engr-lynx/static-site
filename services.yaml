@@ -1,0 +1,297 @@
+- name: publii+easyblog
+  elements:
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'strict-dynamic'"
+    - fonts.googleapis.com
+  - name: fontSrc
+    sources:
+    - fonts.gstatic.com
+    - 'data:'
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+- name: astro+insight+
+  elements:
+  - name: styleSrc
+    sources:
+    - fonts.googleapis.com
+  - name: fontSrc
+    sources:
+    - fonts.gstatic.com
+    - 'data:'
+- name: amp
+  elements:
+  - name: scriptSrc
+    sources:
+    - cdn.ampproject.org
+  - name: connectSrc
+    sources:
+    - cdn.ampproject.org
+- name: google-tag-manager
+  elements:
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - www.googletagmanager.com
+- name: google-analytics-via-google-tag-manager
+  elements:
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - www.google-analytics.com
+  - name: connectSrc
+    sources:
+    - www.google-analytics.com
+- name: google-analytics
+  elements:
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - '*.google-analytics.com'
+  - name: connectSrc
+    sources:
+    - '*.google-analytics.com'
+- name: google-search
+  elements:
+  - name: frameSrc
+    sources:
+    - cse.google.com
+  - name: imgSrc
+    sources:
+    - www.googleapis.com
+    - '*.google.com'
+    - '*.gstatic.com'
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'strict-dynamic'"
+    - www.google.com
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'unsafe-eval'"
+    - cse.google.com
+    - www.google.com
+- name: google-adsense
+  elements:
+  - name: frameSrc
+    sources:
+    - googleads.g.doubleclick.net
+    - tpc.googlesyndication.com
+    - www.google.com
+  - name: imgSrc
+    sources:
+    - '*.googlesyndication.com'
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - '*.googlesyndication.com'
+    - '*.googleadservices.com'
+    - adsense.google.com
+    - adservice.google.ca
+    - adservice.google.co.in
+    - adservice.google.co.kr
+    - adservice.google.co.uk
+    - adservice.google.co.za
+    - adservice.google.com
+    - adservice.google.com.ar
+    - adservice.google.com.au
+    - adservice.google.com.br
+    - adservice.google.com.co
+    - adservice.google.com.gt
+    - adservice.google.com.mx
+    - adservice.google.com.pe
+    - adservice.google.com.ph
+    - adservice.google.com.pk
+    - adservice.google.com.tr
+    - adservice.google.com.tw
+    - adservice.google.com.vn
+    - adservice.google.de
+    - adservice.google.dk
+    - adservice.google.es
+    - adservice.google.fr
+    - adservice.google.nl
+    - adservice.google.no
+    - adservice.google.ru
+    - adservice.google.vg
+  - name: connectSrc
+    sources:
+    - '*.googlesyndication.com'
+    - csi.gstatic.com
+- name: plerdy
+  elements:
+  - name: scriptSrc
+    sources:
+    - '*.plerdy.com'
+  - name: connectSrc
+    sources:
+    - '*.plerdy.com'
+    - 'wss:'
+- name: sendfox
+  elements:
+  - name: frameSrc
+    sources:
+    - www.google.com
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - sendfox.com
+    - www.google.com
+    - www.gstatic.com
+  - name: connectSrc
+    sources:
+    - sendfox.com
+- name: optinly
+  elements:
+  - name: frameSrc
+    sources:
+    - www.google.com
+  - name: imgSrc
+    sources:
+    - assets.optinly.net
+    - apinew.optinly.com
+    - 'data:'
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'strict-dynamic'"
+    - cdn.optinly.net
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - cdn.optinly.net
+    - ajax.googleapis.com
+    - www.google.com
+    - www.gstatic.com
+  - name: connectSrc
+    sources:
+    - static.optinly.net
+    - apinew.optinly.com
+- name: popupular
+  elements:
+  - name: mediaSrc
+    sources:
+    - cdn.popupular.io
+  - name: frameSrc
+    sources:
+    - content.popupular.io
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - cdn.popupular.io
+  - name: connectSrc
+    sources:
+    - '*.popupular.io'
+- name: useinbox
+  elements:
+  - name: frameSrc
+    sources:
+    - joinbox.today
+- name: upcontent
+  elements:
+  - name: imgSrc
+    sources:
+    - '*.img.upcontent.com'
+    - 'data:'
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'strict-dynamic'"
+    - galleries.upcontent.com
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - code.galleries.upcontent.com
+    - cdnjs.cloudflare.com
+  - name: connectSrc
+    sources:
+    - galleries.upcontent.com
+- name: disqus
+  elements:
+  - name: frameSrc
+    sources:
+    - disqus.com
+  - name: imgSrc
+    sources:
+    - c.disquscdn.com
+    - referrer.disqus.com
+    - cdn.viglink.com
+    - links.services.disqus.com
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'strict-dynamic'"
+    - c.disquscdn.com
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - '*.disqus.com'
+    - c.disquscdn.com
+    - links.services.disqus.com
+  - name: prefetchSrc
+    sources:
+    - c.disquscdn.com
+    - disqus.com
+  - name: connectSrc
+    sources:
+    - links.services.disqus.com
+- name: feedbacklink
+  elements:
+  - name: imgSrc
+    sources:
+    - firebasestorage.googleapis.com
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - feedback.link
+- name: linkz-ai
+  elements:
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - js.linkz.ai
+  - name: connectSrc
+    sources:
+    - api.linkz.ai
+- name: prefinery
+  elements:
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - widget.prefinery.com
+    - ajax.googleapis.com
+- name: old-lynx-rocks-theme
+  elements:
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+    - "'strict-dynamic'"
+    - maxcdn.bootstrapcdn.com
+    - d1azc1qln24ryf.cloudfront.net
+    - fonts.googleapis.com
+    - use.fontawesome.com
+  - name: fontSrc
+    sources:
+    - fonts.gstatic.com
+    - use.fontawesome.com
+    - 'data:'
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+    - blog.uicard.io
+    - code.jquery.com
+    - cdnjs.cloudflare.com
+    - maxcdn.bootstrapcdn.com
+  - name: connectSrc
+    sources:
+    - stats.g.doubleclick.net
+- name: standalone-html
+  elements:
+  - name: styleSrc
+    sources:
+    - "'unsafe-inline'"
+  - name: fontSrc
+    sources:
+    - 'data:'

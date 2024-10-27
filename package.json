@@ -1,0 +1,30 @@
+{
+  "name": "static-site",
+  "version": "0.1.0",
+  "bin": {
+    "system": "bin/system.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "context": "yq -p yaml -o json cdk.context.yaml > cdk.context.json"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.8.1",
+    "aws-cdk": "2.164.1",
+    "js-yaml": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@aws-solutions-constructs/aws-cloudfront-s3": "^2.74.0",
+    "@aws-solutions-constructs/core": "^2.74.0",
+    "@aws-solutions-constructs/resources": "^2.74.0",
+    "aws-cdk-lib": "2.164.1",
+    "constructs": "^10.4.2",
+    "global": "^4.4.0",
+    "source-map-support": "^0.5.21"
+  }
+}

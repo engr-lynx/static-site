@@ -1,0 +1,9 @@
+system:
+  name: StaticSite
+  backend:
+    staticSite:
+      domain: example.com
+      cspHeaderServices:
+      - standalone-html
+      - google-tag-manager
+      - google-analytics-via-google-tag-manager

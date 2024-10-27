@@ -1,0 +1,7 @@
+
+0. Include a publishing pipeline.
+1. Pull domain, zoneId, and iamUser from env or config instead of yaml.
+2. Create origin request policy such that no headers, query string or cookies are forwarded
+3. Offload security headers to response headers policy instead of viewer response cloudfront function
+4. optimize cloudfront function
+5. disable S3 encryption

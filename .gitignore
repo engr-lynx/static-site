@@ -1,0 +1,19 @@
+# ts
+*.js
+*.d.ts
+!lib/cf-functions/viewer-request-handler.js
+!lib/cf-functions/viewer-response-handler.js
+
+# yarn
+node_modules
+yarn-error.log
+
+# CDK assets
+.cdk.staging
+cdk.out
+cdk.context.*
+!cdk.context.sample.yaml
+
+# System Files
+.DS_Store
+Thumbs.db
