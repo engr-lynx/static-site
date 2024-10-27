@@ -186,7 +186,19 @@
     - '*.popupular.io'
 - name: useinbox
   elements:
+  - name: imgSrc
+    sources:
+    - joinbox.today
+  - name: styleSrc
+    sources:
+    - joinbox.today
+  - name: fontSrc
+    sources:
+    - joinbox.today
   - name: frameSrc
+    sources:
+    - joinbox.today
+  - name: scriptSrc
     sources:
     - joinbox.today
 - name: upcontent
