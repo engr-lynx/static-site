@@ -67,6 +67,7 @@ export class StaticSite extends Construct {
     })
     const viewerRequestFunction = new CloudFront.Function(this, 'ViewerRequestFunction', {
       code: viewerRequestCode,
+      runtime: CloudFront.FunctionRuntime.JS_2_0,
     })
     const viewerRequestAssociation = {
       eventType: CloudFront.FunctionEventType.VIEWER_REQUEST,
@@ -106,6 +107,7 @@ export class StaticSite extends Construct {
     const viewerResponseCode = CloudFront.FunctionCode.fromInline(viewerResponseFile)
     const viewerResponseFunction = new CloudFront.Function(this, 'ViewerResponseFunction', {
       code: viewerResponseCode,
+      runtime: CloudFront.FunctionRuntime.JS_2_0,
     })
     const viewerResponseAssociation = {
       eventType: CloudFront.FunctionEventType.VIEWER_RESPONSE,
@@ -149,12 +151,13 @@ export class StaticSite extends Construct {
     }
     const codePath = join(__dirname, 'custom-resources', 'empty-bucket')
     const code = Lambda.Code.fromAsset(codePath)
-    const timeout = Duration.minutes(5)
     const onEventHandler = new Lambda.Function(this, 'EmptyBucketFunction', {
       code,
       handler: 'index.handler',
-      runtime: Lambda.Runtime.PYTHON_3_9,
-      timeout,
+      runtime: Lambda.Runtime.PYTHON_3_12,
+      architecture: Lambda.Architecture.ARM_64,
+      memorySize: 192,
+      timeout: Duration.minutes(5),
     })
     this.storage.grantRead(onEventHandler)
     this.storage.grantDelete(onEventHandler)
