@@ -1,4 +1,4 @@
-system:
+app:
   name: StaticSite
   backend:
     staticSite:

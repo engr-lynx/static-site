@@ -4,21 +4,22 @@ import {
   App,
 } from 'aws-cdk-lib'
 import {
-  SystemConfig,
+  AppConfig,
 } from '../lib/config'
 import {
   BackEndStack,
 } from '../lib/back-end-stack'
 
+// ToDo: Use CDK nag (https://www.npmjs.com/package/cdk-nag).
 const app = new App()
-const systemContext = app.node.tryGetContext('system')
-const systemConfig = systemContext as SystemConfig
+const appContext = app.node.tryGetContext('app')
+const appConfig = appContext as AppConfig
 const env = {
   region: process.env.CDK_DEFAULT_REGION,
   account: process.env.CDK_DEFAULT_ACCOUNT,
 }
-const name = systemConfig.name + 'BackEnd'
+const name = appConfig.name + 'StaticSite'
 new BackEndStack(app, name, {
-  ...systemConfig.backend,
+  ...appConfig.backend,
   env,
 })

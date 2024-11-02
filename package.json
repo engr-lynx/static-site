@@ -2,7 +2,7 @@
   "name": "static-site",
   "version": "0.1.0",
   "bin": {
-    "system": "bin/system.js"
+    "app": "bin/app.js"
   },
   "scripts": {
     "build": "tsc",
@@ -24,7 +24,6 @@
     "@aws-solutions-constructs/resources": "^2.74.0",
     "aws-cdk-lib": "2.164.1",
     "constructs": "^10.4.2",
-    "global": "^4.4.0",
     "source-map-support": "^0.5.21"
   }
 }

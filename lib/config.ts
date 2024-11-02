@@ -25,7 +25,7 @@ export interface BackEndConfig {
   readonly staticSite: StaticSiteConfig
 }
 
-export interface SystemConfig {
+export interface AppConfig {
   readonly name: string
   readonly backend: BackEndConfig
 }
