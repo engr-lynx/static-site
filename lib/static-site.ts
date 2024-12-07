@@ -52,16 +52,25 @@ export class StaticSite extends Construct {
     const zone = Route53.HostedZone.fromLookup(this, 'Zone', {
       domainName,
     })
+    const redirectFromWww = props.redirectFromWww ?? false
+    const wwwDomain = `www.${props.domain}`
     const validation = ACM.CertificateValidation.fromDns(zone)
+    const subjectAlternativeNames = redirectFromWww ? [wwwDomain] : []
     const certificate = new ACM.Certificate(this, 'Certificate', {
       domainName: props.domain,
+      subjectAlternativeNames,
       validation,
     })
     const bucketProps = {
       bucketName: props.bucket,
       removalPolicy: RemovalPolicy.DESTROY,
     }
-    const viewerRequestFilePath = join(__dirname, 'cf-functions', 'viewer-request-handler.js')
+    let viewerRequestFilePath
+    if (redirectFromWww) {
+      viewerRequestFilePath = join(__dirname, 'cf-functions', 'redirect-www-viewer-request-handler.js')
+    } else {
+      viewerRequestFilePath = join(__dirname, 'cf-functions', 'default-viewer-request-handler.js')
+    }
     const viewerRequestCode = CloudFront.FunctionCode.fromFile({
       filePath: viewerRequestFilePath,
     })
@@ -101,7 +110,7 @@ export class StaticSite extends Construct {
       if (sourcesOfSourceType) {
         const uniqueSources = sourcesOfSourceType.filter((val, ndx, arr) => arr.indexOf(val) === ndx)
         const sources = uniqueSources.join(' ')
-        viewerResponseFile = viewerResponseFile.replace('{{' + currentSourceType + '}}', sources)
+        viewerResponseFile = viewerResponseFile.replace(`{{${currentSourceType}}}`, sources)
       }
     })
     const viewerResponseCode = CloudFront.FunctionCode.fromInline(viewerResponseFile)
@@ -124,6 +133,9 @@ export class StaticSite extends Construct {
     const domainNames = [
       props.domain,
     ]
+    if (redirectFromWww) {
+      domainNames.push(wwwDomain)
+    }
     const cloudFrontDistributionProps = {
       defaultBehavior,
       domainNames,
@@ -178,6 +190,13 @@ export class StaticSite extends Construct {
       target,
       recordName: props.domain,
     })
+    if (redirectFromWww) {
+      new Route53.ARecord(this, "WWWRecord", {
+        zone,
+        target,
+        recordName: wwwDomain,
+      })
+    }
     new CfnOutput(this, 'Storage', {
       value: this.storage.bucketName,
     })

@@ -15,6 +15,7 @@ export interface CSPHeaderConfig {
 export interface StaticSiteConfig {
   readonly domain: string
   readonly isSubdomain?: boolean
+  readonly redirectFromWww?: boolean
   readonly zoneId: string
   readonly bucket?: string
   readonly iamUser?: string

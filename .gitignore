@@ -1,7 +1,8 @@
 # ts
 *.js
 *.d.ts
-!lib/cf-functions/viewer-request-handler.js
+!lib/cf-functions/default-viewer-request-handler.js
+!lib/cf-functions/redirect-www-viewer-request-handler.js
 !lib/cf-functions/viewer-response-handler.js
 
 # yarn

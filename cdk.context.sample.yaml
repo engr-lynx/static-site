@@ -3,6 +3,7 @@ app:
   backend:
     staticSite:
       domain: example.com
+      redirectFromWww: true
       cspHeaderServices:
       - standalone-html
       - google-tag-manager

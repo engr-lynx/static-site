@@ -307,3 +307,25 @@
   - name: fontSrc
     sources:
     - 'data:'
+  - name: scriptSrc
+    sources:
+    - "'unsafe-inline'"
+- name: mermaid-cdn
+  elements:
+  - name: scriptSrc
+    sources:
+    - cdn.jsdelivr.net
+- name: bamboo-cloud
+  elements:
+  - name: frameSrc
+    sources:
+    - cdn.bamboo-video.com
+    - static.panda-os.com
+- name: posthog
+  elements:
+  - name: scriptSrc
+    sources:
+    - us-assets.i.posthog.com
+  - name: connectSrc
+    sources:
+    - us.i.posthog.com
